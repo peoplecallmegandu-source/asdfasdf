@@ -1,0 +1,546 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en" class="antialiased">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Merriweather:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Aurora Roasters — artisan coffee, ethically sourced and roasted to awaken your day.">
+  <meta property="og:title" content="Aurora Roasters">
+  <meta property="og:description" content="Exceptional coffee, unforgettable moments.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1589337096216-26e556b1b99b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw2fHxBJTIwd2lkZSUyMGhlcm8lMjBzaG90JTIwb2YlMjBhJTIwc3RlYW1pbmclMjBhcnRpc2FuJTIwY29mZmVlJTIwY3VwJTIwb24lMjBhJTIwd29vZGVuJTIwdGFibGUlMjB3aXRoJTIwc29mdCUyMG1vcm5pbmclMjBsaWdodCUyMGFuZCUyMGNvZmZlZSUyMGJlYW5zJTIwc2NhdHRlcmVkJTIwYXJvdW5kfGVufDB8MHx8fDE3NTUzNTM3MDN8MA&ixlib=rb-4.1.0&q=80&w=1080">
+  <title>Aurora Roasters — Artisan Coffee</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (using utility classes directly) -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            aurora: {
+              50: '#f7fbff',
+              100: '#e8f3ff',
+              500: '#7C3AED',
+              700: '#5b21b6'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            serif: ['Merriweather', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --bg: linear-gradient(135deg,#0f172a 0%, #0b1220 40%, #1f2937 100%);
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.04);
+      --accent: linear-gradient(90deg,#F97316,#7C3AED);
+    }
+    .glass { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); backdrop-filter: blur(8px); }
+    .glass-strong { background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03)); backdrop-filter: blur(12px); }
+
+    /* Full width requirement */
+    main, header, footer { width:100%; max-width: none; }
+
+    /* Parallax effect for hero image */
+    .parallax { transform: translateZ(0); will-change: transform; }
+
+    /* Smooth reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: all .8s cubic-bezier(.2,.9,.3,1); }
+    .reveal.show { opacity:1; transform: none; }
+
+    .focus-ring:focus { outline: 2px dashed rgba(124,58,237,0.6); outline-offset: 4px; }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-[radial-gradient(ellipse_at_top_left,_var(--bg))] text-slate-100 leading-relaxed font-sans transition-colors duration-500">
+
+  <!-- Top nav -->
+  <header class="w-full fixed top-0 left-0 z-50">
+    <nav class="w-full flex items-center justify-between px-6 py-4 glass-strong backdrop-blur-sm shadow-md">
+      <div class="flex items-center gap-4">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3 no-underline">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-orange-400 to-violet-600 flex items-center justify-center text-white font-bold shadow-lg">AR</div>
+          <div class="leading-tight">
+            <div class="text-sm font-semibold">Aurora Roasters</div>
+            <div class="text-xs text-slate-300">Handcrafted · Ethical · Bold</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-slate-200 hover:text-white transition">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-slate-200 hover:text-white transition">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'services.html\'); return false;" class="text-slate-200 hover:text-white transition">Shop</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-slate-200 hover:text-white transition">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="searchBtn" aria-label="Search" class="p-2 rounded-md hover:scale-105 transform transition glass focus-ring">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"/></svg>
+        </button>
+
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-md glass hover:rotate-6 transition transform">
+          <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zM4.22 5.22a1 1 0 010 1.41L3.05 7.8a1 1 0 11-1.41-1.41l1.17-1.17a1 1 0 011.41 0zM2 11a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm8 6a1 1 0 011-1v-1a1 1 0 10-2 0v1a1 1 0 011 1zM17.78 5.22a1 1 0 00-1.41 0L15.2 6.39a1 1 0 101.41 1.41l1.17-1.17a1 1 0 000-1.41z"/>
+            <path d="M10 5a5 5 0 100 10 5 5 0 000-10z" />
+          </svg>
+        </button>
+
+        <a href="#order" class="ml-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-violet-600 text-white font-semibold shadow-lg hover:scale-105 transition transform">Order</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-28 w-full max-w-none">
+    <!-- Hero -->
+    <section id="hero" class="relative w-full overflow-hidden">
+      <div class="absolute inset-0 -z-10 parallax" id="heroBg" style="background-image: linear-gradient(120deg, rgba(15,23,42,0.65), rgba(9,10,17,0.75)), url('https://pixabay.com/get/g12bd40c6ae3a166dacb7ba7ae7555f8d2e7ff13d0345e7ff39e0ba3d76079ecd0d3b5df1847d53807d49a56a28064bf3f178563323c3e59a483e2a6275db7c7f_640.jpg'); background-size: cover; background-position: center; height: 72vh; filter: brightness(.8)"></div>
+
+      <div class="w-full h-[72vh] flex items-center">
+        <div class="container mx-auto px-6 w-full max-w-none">
+          <div class="w-full flex flex-col md:flex-row items-center gap-8">
+            <div class="w-full md:w-6/12 text-left reveal" data-reveal-delay="100">
+              <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4" style="font-family: Poppins, sans-serif">Awaken Your Day with Coffee That Remembers the Sun</h1>
+              <p class="text-lg text-slate-200 mb-6 max-w-2xl font-medium">We source single-origin beans from small farms, roast them with care, and craft coffee that tells a story with every sip. Ethical. Transparent. Unforgettable.</p>
+
+              <div class="flex gap-4 flex-wrap">
+                <a href="#roasts" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-orange-400 to-violet-600 text-white font-semibold shadow-xl hover:scale-105 transition transform">Explore Roasts</a>
+                <button id="playVideo" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-transparent border border-slate-200 text-slate-200 hover:bg-white/5 transition">Watch Story</button>
+              </div>
+
+              <div class="mt-6 flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-amber-300">⭐</div>
+                  <div>
+                    <div class="text-sm text-slate-300">Rated</div>
+                    <div class="text-lg font-semibold">4.9/5 by 8,420 Customers</div>
+                  </div>
+                </div>
+
+                <div class="border-l border-white/10 h-8"></div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-emerald-300">☕</div>
+                  <div>
+                    <div class="text-sm text-slate-300">From</div>
+                    <div class="text-lg font-semibold">Direct Trade Farmers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full md:w-6/12 reveal" data-reveal-delay="300">
+              <div class="glass p-4 rounded-2xl shadow-2xl backdrop-blur-md border border-white/6">
+                <img src="https://images.pexels.com/photos/4790051/pexels-photo-4790051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Coffee flight" loading="lazy" class="w-full h-64 object-cover rounded-lg shadow-lg">
+
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <div class="p-3 rounded-lg bg-gradient-to-r from-white/4 to-white/2">
+                    <div class="text-xs text-slate-300">Single Origin</div>
+                    <div class="font-semibold">Ethiopia - Yirgacheffe</div>
+                    <div class="text-sm text-slate-400">Floral, citrus, bergamot</div>
+                  </div>
+                  <div class="p-3 rounded-lg bg-gradient-to-r from-white/4 to-white/2">
+                    <div class="text-xs text-slate-300">Blend</div>
+                    <div class="font-semibold">Aurora Blend</div>
+                    <div class="text-sm text-slate-400">Balanced, caramel, chocolate</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="text-sm text-slate-300">Choose roast intensity</label>
+                  <div class="w-full h-3 rounded-full bg-white/6 mt-2 overflow-hidden">
+                    <div id="roastProgress" class="h-3 bg-gradient-to-r from-orange-400 to-violet-600 w-40 transition-width duration-300"></div>
+                  </div>
+                  <div class="mt-2 flex gap-2 items-center">
+                    <input type="range" id="roastRange" min="0" max="100" value="40" class="w-full accent-violet-500">
+                    <div id="roastLevel" class="w-10 text-right text-sm">40</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features / Promise -->
+    <section id="features" class="py-16 px-6 w-full">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="100">
+            <h3 class="text-xl font-semibold">Farm-to-Cup Transparency</h3>
+            <p class="text-slate-300 mt-2">We pay farmers fairly and publish origin reports for every bag. Know exactly where your coffee came from.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://images.pexels.com/photos/8336978/pexels-photo-8336978.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Farmer" class="w-14 h-14 object-cover rounded-lg shadow-sm" loading="lazy">
+              <div>
+                <div class="text-sm text-slate-300">Direct trade partnerships</div>
+                <div class="font-semibold">15+ Origins</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="200">
+            <h3 class="text-xl font-semibold">Small-Batch Roasting</h3>
+            <p class="text-slate-300 mt-2">Daily small-batch roasts tailored to bring out the unique personality of each bean.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://pixabay.com/get/g86a3d8633f4d13f76fd3de137c1b858477100fcaa459b31bc6b0cd49adc5a68da3080f69f26313c9438a13aa7bea4c139b57a10492f3f9459bd89b303415d843_640.jpg" alt="Roaster" class="w-14 h-14 object-cover rounded-lg shadow-sm" loading="lazy">
+              <div>
+                <div class="text-sm text-slate-300">Freshness guaranteed</div>
+                <div class="font-semibold">Roasted weekly</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="300">
+            <h3 class="text-xl font-semibold">Sustainable Packaging</h3>
+            <p class="text-slate-300 mt-2">Compostable bags and minimal waste across our supply chain — because taste should never cost the planet.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1618286609899-8c9e00b6367a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8Q29tcG9zdGFibGUlMjBjb2ZmZWUlMjBiYWclMjBvbiUyMGElMjB3b29kZW4lMjBjb3VudGVyJTIwd2l0aCUyMGxlYXZlc3xlbnwwfDB8fHwxNzU1MzUzNzA3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Packaging" class="w-14 h-14 object-cover rounded-lg shadow-sm" loading="lazy">
+              <div>
+                <div class="text-sm text-slate-300">Planet-friendly</div>
+                <div class="font-semibold">Compostable</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roasts / Shop Teaser -->
+    <section id="roasts" class="py-16 px-6 w-full">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-3xl font-extrabold">Roasts & Collections</h2>
+          <div class="text-slate-300">Curated for every ritual — filter, espresso, or pour-over.</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="glass p-6 rounded-2xl reveal" data-reveal-delay="100">
+            <img src="https://images.unsplash.com/photo-1736154577985-13f3158d5bdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8RGFyayUyMHJvYXN0ZWQlMjBjb2ZmZWUlMjBiZWFucyUyMGluJTIwYSUyMHdvb2RlbiUyMHNjb29wJTIwd2l0aCUyMGRlZXAlMjBjaG9jb2xhdGUlMjB0b25lc3xlbnwwfDB8fHwxNzU1MzUzNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Dark roast" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" loading="lazy">
+            <h3 class="text-xl font-semibold">Midnight Velvet — Dark Roast</h3>
+            <p class="text-slate-300 mt-2">Bold chocolate, toasted hazelnut, low acidity — built for espresso and milk-based drinks.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <button class="px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-violet-600 text-white shadow hover:scale-105 transition">Buy 12oz</button>
+              <button class="px-4 py-2 rounded-full border border-white/10 hover:bg-white/5 transition">Sample</button>
+            </div>
+          </article>
+
+          <article class="glass p-6 rounded-2xl reveal" data-reveal-delay="200">
+            <img src="https://images.unsplash.com/photo-1651859878417-9e3ecfe4b529?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxMaWdodCUyMHJvYXN0JTIwY29mZmVlJTIwYmVhbnMlMjB3aXRoJTIwZmxvcmFsJTIwYW5kJTIwYnJpZ2h0JTIwY2l0cnVzJTIwbm90ZXN8ZW58MHwwfHx8MTc1NTM1MzcwOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Light roast" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" loading="lazy">
+            <h3 class="text-xl font-semibold">Sunrise Bloom — Light Roast</h3>
+            <p class="text-slate-300 mt-2">Citrus, jasmine, and honey — bright and complex. Perfect for pour-over clarity.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <button class="px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-violet-600 text-white shadow hover:scale-105 transition">Buy 12oz</button>
+              <button class="px-4 py-2 rounded-full border border-white/10 hover:bg-white/5 transition">Sample</button>
+            </div>
+          </article>
+
+          <article class="glass p-6 rounded-2xl reveal" data-reveal-delay="300">
+            <img src="https://images.unsplash.com/photo-1709205654821-d385d9cfb2ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw4fHxBJTIwc2VsZWN0aW9uJTIwb2YlMjBjb2ZmZWUlMjBiYWdzJTIwbGFiZWxlZCUyMHN1YnNjcmlwdGlvbiUyMHdpdGglMjBmcmVzaCUyMHJvYXN0ZWQlMjBiYWRnZXN8ZW58MHwwfHx8MTc1NTM1MzcwOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Subscription" class="w-full h-48 object-cover rounded-lg shadow-md mb-4" loading="lazy">
+            <h3 class="text-xl font-semibold">Aurora Subs — Fresh Every Month</h3>
+            <p class="text-slate-300 mt-2">Customize frequency, roast level, and amount. Skip or edit anytime.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-violet-600 text-white shadow hover:scale-105 transition">Get Started</a>
+              <button class="px-4 py-2 rounded-full border border-white/10 hover:bg-white/5 transition">Learn More</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials + Social Proof -->
+    <section id="social" class="py-16 px-6 w-full">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="md:flex md:items-center md:justify-between mb-8">
+          <h2 class="text-2xl font-extrabold">Loved by Coffee People</h2>
+          <div class="text-slate-300">Real stories from real sippers.</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="100">
+            <p class="text-slate-300 italic">“Aurora's Sunrise Bloom took my morning routine to a whole new level. Bright, floral, and consistent — pure joy.”</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://images.pexels.com/photos/321598/pexels-photo-321598.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Customer 1" class="w-12 h-12 rounded-full object-cover shadow-sm">
+              <div>
+                <div class="font-semibold">Jamie R.</div>
+                <div class="text-xs text-slate-400">Barista & Designer</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="200">
+            <p class="text-slate-300 italic">“The direct-trade transparency is unmatched. Seeing the farm notes makes each cup feel connected.”</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1634745976689-41875b3a3155?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxQcm9mZXNzaW9uYWwtbG9va2luZyUyMHJldmlld2VyJTIwdGFzdGluZyUyMGNvZmZlZSUyMHdpdGglMjBub3RlYm9va3xlbnwwfDB8fHwxNzU1MzUzNzExfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Customer 2" class="w-12 h-12 rounded-full object-cover shadow-sm">
+              <div>
+                <div class="font-semibold">Marcus L.</div>
+                <div class="text-xs text-slate-400">Coffee Critic</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-2xl reveal" data-reveal-delay="300">
+            <p class="text-slate-300 italic">“Subscription is perfect — fresh beans delivered just when I need them. The roast profiles are spot on.”</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="https://pixabay.com/get/g7a9999df5c4ab2c0b0347874467a84dd460219f3f517ba4ab34ba93bef62709532c5b00e1dc7c74d725ce73669adf53637327ddccf99ea75662af9f077b118ca_640.jpg" alt="Customer 3" class="w-12 h-12 rounded-full object-cover shadow-sm">
+              <div>
+                <div class="font-semibold">Sofia T.</div>
+                <div class="text-xs text-slate-400">Product Manager</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion + CTA -->
+    <section id="faq" class="py-16 px-6 w-full">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="md:flex md:items-start md:justify-between gap-8">
+          <div class="md:w-1/2 reveal" data-reveal-delay="100">
+            <h2 class="text-3xl font-extrabold">Questions? We Have Answers.</h2>
+            <p class="text-slate-300 mt-2">Concise, honest answers. Or reach out — we're people who love coffee as much as you do.</p>
+
+            <div class="mt-6 space-y-4" id="faqList">
+              <div class="glass p-4 rounded-lg">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">
+                  <span class="font-semibold">How soon will my beans ship?</span>
+                  <svg class="h-5 w-5 text-slate-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.9l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.24 8.25a.75.75 0 01-.01-1.04z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="mt-3 text-slate-300 faq-panel hidden">We roast weekly and ship within 48 hours of roast for peak freshness. Subscriptions ship on your schedule.</div>
+              </div>
+
+              <div class="glass p-4 rounded-lg">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">
+                  <span class="font-semibold">Do you offer sampler packs?</span>
+                  <svg class="h-5 w-5 text-slate-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.9l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.24 8.25a.75.75 0 01-.01-1.04z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="mt-3 text-slate-300 faq-panel hidden">Yes — try our 4x sampler that includes light, medium, dark, and a rotating seasonal selection.</div>
+              </div>
+
+              <div class="glass p-4 rounded-lg">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">
+                  <span class="font-semibold">Can I reorder the exact roast?</span>
+                  <svg class="h-5 w-5 text-slate-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.9l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.24 8.25a.75.75 0 01-.01-1.04z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="mt-3 text-slate-300 faq-panel hidden">We tag roast batches. Use the batch code on your bag to request the exact roast in your next order.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 reveal" data-reveal-delay="200">
+            <div class="glass p-6 rounded-2xl">
+              <h3 class="text-xl font-semibold">Find your ideal cup — quick quiz</h3>
+              <p class="text-slate-300 mt-2">Choose what you love and we'll recommend a roast.</p>
+
+              <div class="mt-4">
+                <label class="block text-sm text-slate-300">Flavor preference</label>
+                <select id="flavorSel" class="w-full mt-2 p-2 rounded bg-transparent border border-white/8 focus-ring">
+                  <option value="bright">Bright & Floral</option>
+                  <option value="balanced">Balanced & Nutty</option>
+                  <option value="bold">Bold & Chocolate</option>
+                </select>
+
+                <label class="block text-sm text-slate-300 mt-4">Brewing method</label>
+                <div class="mt-2 flex gap-2">
+                  <button data-method="pour" class="method-btn glass px-3 py-2 rounded">Pour-over</button>
+                  <button data-method="espresso" class="method-btn glass px-3 py-2 rounded">Espresso</button>
+                  <button data-method="french" class="method-btn glass px-3 py-2 rounded">French Press</button>
+                </div>
+
+                <div class="mt-4">
+                  <button id="quizSubmit" class="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-orange-400 to-violet-600 text-white font-semibold">Find my roast</button>
+                </div>
+
+                <div id="quizResult" class="mt-4 text-slate-300 hidden"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA / Newsletter -->
+    <section id="order" class="py-16 px-6 w-full">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="glass p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 reveal" data-reveal-delay="100">
+          <div>
+            <h3 class="text-2xl font-extrabold">Fresh beans, delivered to your door</h3>
+            <p class="text-slate-300 mt-2">Sign up for 10% off your first subscription order. Cancel anytime.</p>
+          </div>
+
+          <form id="newsletterForm" class="w-full md:w-1/2 flex gap-2" novalidate>
+            <input aria-label="Email address" type="email" id="newsletterEmail" required placeholder="you@coffee.com" class="w-full p-3 rounded-xl bg-transparent border border-white/8 focus-ring" />
+            <button class="px-4 py-3 rounded-xl bg-gradient-to-r from-orange-400 to-violet-600 text-white font-semibold">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-10 px-6 glass-strong border-t border-white/6">
+      <div class="container mx-auto w-full max-w-none flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-orange-400 to-violet-600 flex items-center justify-center text-white font-bold">AR</div>
+          <div>
+            <div class="font-semibold">Aurora Roasters</div>
+            <div class="text-sm text-slate-400">© <span id="year"></span> — All rights reserved</div>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <a href="#" class="text-slate-300 hover:text-white">Privacy</a>
+          <a href="#" class="text-slate-300 hover:text-white">Terms</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-slate-300 hover:text-white">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Modal (video) -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60">
+    <div class="w-full max-w-3xl p-4">
+      <div class="bg-[#060617] rounded-xl p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-semibold">Our Story</h3>
+          <button id="modalClose" class="p-2 rounded focus-ring">✕</button>
+        </div>
+        <div class="aspect-w-16 aspect-h-9 bg-black rounded overflow-hidden">
+          <img src="https://images.pexels.com/photos/19057544/pexels-photo-19057544.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Video placeholder" class="w-full h-full object-cover rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Utilities
+    const revealElems = document.querySelectorAll('.reveal');
+    const setReveal = () => {
+      revealElems.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        const delay = el.dataset.revealDelay || 0;
+        if (rect.top < window.innerHeight - 80) {
+          setTimeout(()=> el.classList.add('show'), delay);
+        }
+      });
+    };
+    window.addEventListener('scroll', setReveal);
+    window.addEventListener('load', () => { setReveal(); document.getElementById('year').textContent = new Date().getFullYear(); });
+
+    // Parallax hero
+    const heroBg = document.getElementById('heroBg');
+    window.addEventListener('scroll', ()=>{
+      const sc = window.scrollY;
+      heroBg.style.transform = `translateY(${sc * -0.15}px) scale(${1 + sc/8000})`;
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (localStorage.theme === 'dark' || (!localStorage.theme && prefersDark)) document.documentElement.classList.add('dark');
+    const updateThemeIcon = () => {
+      const icon = document.getElementById('themeIcon');
+      if (document.documentElement.classList.contains('dark')) icon.classList.remove('text-yellow-300'); else icon.classList.add('text-yellow-300');
+    }
+    updateThemeIcon();
+    themeToggle.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) localStorage.theme = 'dark'; else localStorage.removeItem('theme');
+      updateThemeIcon();
+    });
+
+    // Modal
+    const modal = document.getElementById('modal');
+    document.getElementById('playVideo').addEventListener('click', ()=> modal.classList.remove('hidden'));
+    document.getElementById('modalClose').addEventListener('click', ()=> modal.classList.add('hidden'));
+    modal.addEventListener('click', (e)=>{ if (e.target === modal) modal.classList.add('hidden'); });
+
+    // Roast slider
+    const roastRange = document.getElementById('roastRange');
+    const roastProgress = document.getElementById('roastProgress');
+    const roastLevel = document.getElementById('roastLevel');
+    roastRange.addEventListener('input', (e)=>{
+      const v = e.target.value;
+      roastProgress.style.width = v + '%';
+      roastLevel.textContent = v;
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', ()=>{
+        const panel = btn.parentElement.querySelector('.faq-panel');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        panel.classList.toggle('hidden');
+      });
+    });
+
+    // Quick quiz
+    let chosenMethod = null;
+    document.querySelectorAll('.method-btn').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        document.querySelectorAll('.method-btn').forEach(x=>x.classList.remove('ring-2','ring-violet-500'));
+        b.classList.add('ring-2','ring-violet-500');
+        chosenMethod = b.dataset.method;
+      });
+    });
+    document.getElementById('quizSubmit').addEventListener('click', ()=>{
+      const flavor = document.getElementById('flavorSel').value;
+      const result = document.getElementById('quizResult');
+      let rec = 'Aurora Blend — Medium';
+      if (flavor === 'bright') rec = chosenMethod === 'espresso' ? 'Filter Light Roast — Sunrise Bloom' : 'Sunrise Bloom — Light Roast';
+      if (flavor === 'balanced') rec = 'Aurora Blend — Medium';
+      if (flavor === 'bold') rec = 'Midnight Velvet — Dark Roast';
+      result.textContent = `We recommend: ${rec}`;
+      result.classList.remove('hidden');
+    });
+
+    // Newsletter form validation & submit (AJAX)
+    document.getElementById('newsletterForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail');
+      if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) { email.classList.add('ring-2','ring-red-500'); return; }
+      email.classList.remove('ring-2','ring-red-500');
+      // show skeleton loader
+      const btn = e.submitter || document.querySelector('#newsletterForm button');
+      const old = btn.textContent; btn.textContent = 'Sending...'; btn.disabled = true;
+      try{
+        const res = await fetch('/api/subscribe', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: email.value}) });
+        const json = await res.json();
+        if (json.success) { btn.textContent = 'Thanks!'; setTimeout(()=>{ btn.textContent = old; btn.disabled = false; email.value = ''; }, 1400); }
+        else { throw new Error('Network'); }
+      }catch(err){ btn.textContent = 'Try Again'; setTimeout(()=>{ btn.textContent = old; btn.disabled = false; }, 1400); }
+    });
+
+    // Simple lazy-loading for images with placeholder (progressive enhancement)
+    document.querySelectorAll('img').forEach(img=>{
+      if (img.complete) return; img.style.opacity = 0; img.addEventListener('load', ()=> img.style.opacity = 1);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+  </script>
+</body>
+</html>
