@@ -1,0 +1,117 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Merriweather:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Aurora Roasters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'], serif: ['Merriweather','serif'] } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); backdrop-filter: blur(8px); }
+    main, header, footer { width:100%; max-width:none; }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-gradient-to-b from-[#071023] to-[#0b0f1a] text-slate-100 font-sans">
+  <header class="w-full fixed top-0 left-0 z-40 glass p-4">
+    <div class="container mx-auto w-full max-w-none flex items-center justify-between px-4">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3 no-underline">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-400 to-violet-600 flex items-center justify-center text-white font-bold">AR</div>
+        <div class="hidden md:block">
+          <div class="font-semibold">Aurora Roasters</div>
+          <div class="text-xs text-slate-300">Handcrafted Coffee</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-4">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-slate-300">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'services.html\'); return false;" class="text-slate-300">Shop</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-slate-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 w-full max-w-none">
+    <section class="w-full py-20 px-6">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="reveal">
+            <h1 class="text-4xl font-extrabold">Our Story — Where Soil Meets Sun</h1>
+            <p class="mt-4 text-slate-300">We began as a small micro-roastery with a simple idea: coffee should be traceable, lovingly roasted, and prepared in a way that honors the farmers. From farm visits to roast profiling, our team obsessively tends to each step.</p>
+
+            <div class="mt-6 grid grid-cols-2 gap-4">
+              <div class="glass p-4 rounded-lg">
+                <div class="text-sm text-slate-300">Founded</div>
+                <div class="font-semibold">2017</div>
+              </div>
+              <div class="glass p-4 rounded-lg">
+                <div class="text-sm text-slate-300">Origins</div>
+                <div class="font-semibold">Ethiopia, Colombia, Kenya, Brazil</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="glass p-4 rounded-2xl">
+              <img src="https://pixabay.com/get/g9fd7235f76ceaad036adca0a8491760f2da421b0eb522c8525bf64b28dcdd59d1212eb08e4d1fe2c5ca890a13e49dc628151539e5c1f04f2c24f1bd2ac5cd90a_640.jpg" alt="Team roasting" class="w-full h-64 object-cover rounded-lg shadow" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-lg">
+            <h4 class="font-semibold">Direct Trade</h4>
+            <p class="text-slate-300 mt-2">We partner directly with farmers, providing premiums and long-term contracts to ensure stability.</p>
+          </div>
+          <div class="glass p-6 rounded-lg">
+            <h4 class="font-semibold">Quality Control</h4>
+            <p class="text-slate-300 mt-2">Every lot is cupped, profiled, and roasted according to a sensory roadmap so each bag tastes like the best of the origin.</p>
+          </div>
+          <div class="glass p-6 rounded-lg">
+            <h4 class="font-semibold">Community</h4>
+            <p class="text-slate-300 mt-2">We run farmer education programs and invest in community projects where we source beans.</p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-2xl font-extrabold">Transparency Reports</h3>
+          <p class="text-slate-300 mt-2">Each bag includes a QR code linking to origin notes, farm stories, and shipment details. Scan to learn the journey from cherry to cup.</p>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass p-4 rounded-lg">
+              <h4 class="font-semibold">Batch 042 — Ethiopia</h4>
+              <p class="text-slate-300 mt-1">Washed, natural-locally processed. Floral, bergamot, tea-like. Harvested Sept 2024.</p>
+            </div>
+            <div class="glass p-4 rounded-lg">
+              <h4 class="font-semibold">Batch 039 — Colombia</h4>
+              <p class="text-slate-300 mt-1">Honey process. Caramel, stone fruit. Harvested Aug 2024.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full py-8 glass p-6 mt-12">
+    <div class="container mx-auto w-full max-w-none flex items-center justify-between">
+      <div>
+        <div class="font-semibold">Aurora Roasters</div>
+        <div class="text-sm text-slate-400">Craft, care, and connection.</div>
+      </div>
+      <div class="text-slate-300">Made with care — <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="underline">Contact us</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // simple reveal
+    document.querySelectorAll('.reveal').forEach((el, i)=>{ setTimeout(()=> el.classList.add('show'), 200 + i*120); });
+  </script>
+</body>
+</html>
