@@ -1,0 +1,130 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Merriweather:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Aurora Roasters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Poppins','sans-serif'], serif: ['Merriweather','serif'] } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); backdrop-filter: blur(8px); }
+    main, header, footer { width:100%; max-width:none; }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-[#071023] text-slate-100 font-sans">
+  <header class="w-full fixed top-0 left-0 z-40 glass p-4">
+    <div class="container mx-auto w-full max-w-none flex items-center justify-between px-4">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3 no-underline">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-400 to-violet-600 flex items-center justify-center text-white font-bold">AR</div>
+      </a>
+      <nav class="hidden md:flex gap-4">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-slate-300">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-slate-300">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'services.html\'); return false;" class="text-slate-300">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 w-full max-w-none">
+    <section class="w-full py-20 px-6">
+      <div class="container mx-auto w-full max-w-none">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass p-8 rounded-2xl">
+            <h1 class="text-3xl font-extrabold">Get in touch</h1>
+            <p class="mt-2 text-slate-300">Questions about wholesale, subscriptions, or origin reports? Drop us a note — we respond within one business day.</p>
+
+            <div class="mt-6 space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-amber-400/10 flex items-center justify-center">📍</div>
+                <div>
+                  <div class="font-semibold">Headquarters</div>
+                  <div class="text-slate-300 text-sm">Portland, OR</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-emerald-400/10 flex items-center justify-center">✉️</div>
+                <div>
+                  <div class="font-semibold">Email</div>
+                  <div class="text-slate-300 text-sm">hello@auroraroasters.example</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-violet-400/10 flex items-center justify-center">📞</div>
+                <div>
+                  <div class="font-semibold">Phone</div>
+                  <div class="text-slate-300 text-sm">(503) 555-0166</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="font-semibold">Wholesale & Partnerships</h4>
+              <p class="text-slate-300 mt-2">We partner with cafes and retailers. Send a message with your requirements and a member of our team will reach out.</p>
+            </div>
+          </div>
+
+          <div class="glass p-8 rounded-2xl">
+            <h2 class="text-2xl font-semibold">Contact Form</h2>
+            <p class="text-slate-300 mt-2">Tell us how we can help — required fields are marked.</p>
+
+            <form id="contactForm" class="mt-6 space-y-4" novalidate>
+              <div>
+                <label class="text-sm">Full name *</label>
+                <input id="name" required class="w-full mt-2 p-3 rounded bg-transparent border border-white/8 focus-ring" />
+              </div>
+              <div>
+                <label class="text-sm">Email *</label>
+                <input id="email" type="email" required class="w-full mt-2 p-3 rounded bg-transparent border border-white/8 focus-ring" />
+              </div>
+              <div>
+                <label class="text-sm">Message *</label>
+                <textarea id="message" rows="6" required class="w-full mt-2 p-3 rounded bg-transparent border border-white/8 focus-ring"></textarea>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <button type="submit" class="px-4 py-3 rounded-lg bg-gradient-to-r from-orange-400 to-violet-600 text-white font-semibold">Send message</button>
+                <div id="contactStatus" class="text-sm text-slate-300"></div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full py-8 glass p-6 mt-12">
+    <div class="container mx-auto w-full max-w-none flex items-center justify-between">
+      <div class="font-semibold">Aurora Roasters</div>
+      <div class="text-slate-300">Follow us on social — @AuroraRoasters</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const msg = document.getElementById('message');
+      const status = document.getElementById('contactStatus');
+      if(!name.value || !email.value || !message.value) { status.textContent = 'Please complete all required fields.'; status.classList.add('text-red-500'); return; }
+      status.textContent = 'Sending...';
+      try{
+        const res = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name: name.value, email: email.value, message: msg.value}) });
+        const json = await res.json();
+        if (json.success) { status.textContent = 'Message sent — we will reply within one business day.'; status.classList.remove('text-red-500'); status.classList.add('text-green-400'); name.value=''; email.value=''; msg.value=''; } else { throw new Error('fail'); }
+      }catch(err){ status.textContent = 'There was an error. Try again later.'; status.classList.add('text-red-500'); }
+    });
+  </script>
+</body>
+</html>
